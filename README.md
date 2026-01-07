@@ -4,8 +4,8 @@
 - This project demonstrates a simple smart door lock system using Arduino, two push buttons, and a DC gear motor. The system allows manual locking and unlocking of a door by controlling the motor direction through push button inputs.
 
 > How It Works
-Button 1: Unlocks the door by rotating the gear motor forward
-Button 2: Locks the door by rotating the gear motor in reverse
+- Button 1: Unlocks the door by rotating the gear motor forward
+- Button 2: Locks the door by rotating the gear motor in reverse
 The Arduino reads button inputs and controls the motor using a motor driver.
 
 > Components Used
