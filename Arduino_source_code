@@ -1,0 +1,39 @@
+#include <Stepper.h>
+
+const int STEPS = 2048;
+
+Stepper stepperMotor(STEPS, 3, 4, 5, 6);
+
+int forwardButton = 8;
+int reverseButton = 9;
+
+void setup()
+{
+  stepperMotor.setSpeed(10);
+
+ 
+  pinMode(forwardButton, INPUT_PULLUP);
+  pinMode(reverseButton, INPUT_PULLUP);
+
+  Serial.begin(9600);
+  Serial.println("Smart Door Lock Ready");
+}
+
+void loop()
+{
+  // If FORWARD button is pressed
+  if (digitalRead(forwardButton) == LOW)
+  {
+    Serial.println("Door Locked");
+    stepperMotor.step(512);   //
+    delay(500);
+  }
+
+  // If REVERSE button is pressed
+  if (digitalRead(reverseButton) == LOW)
+   {
+    Serial.println("Door Unlocked");
+    stepperMotor.step(-512);  //
+    delay(500);
+  }
+}
